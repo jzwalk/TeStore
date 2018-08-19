@@ -119,7 +119,7 @@ class TeStore_Action extends Typecho_Widget {
                         foreach( $td as $tdKey => $val ){
                             if( $tdKey!==1 && $tdKey!==2 ) {
                                 $a = $td->item($tdKey)->getElementsByTagName("a");
-                                $href = $a->item(0)->getAttribute("href");
+                                $href = $a->item(0) ? $a->item(0)->getAttribute("href") : '';
                                 //处理多作者链接
                                 if( $tdKey==3 ){
                                     $href = '';
